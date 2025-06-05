@@ -24,9 +24,9 @@ public class userController {
     public User SaveUser(@RequestBody User user){
         return this.userService.SaveUser(user);
     }
-
     @GetMapping("/login")
     public ResponseEntity<Map<String, String>> auth(Authentication authentication){
+        System.out.println(authentication);
         System.out.println(authentication);
         String token = jwtService.generateJwt(authentication);
         Map<String, String> response = new HashMap<>();

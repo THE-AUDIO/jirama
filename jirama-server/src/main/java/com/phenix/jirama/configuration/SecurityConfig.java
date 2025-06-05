@@ -37,7 +37,6 @@ public class SecurityConfig {
                 .and()
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth->{
-                    auth.requestMatchers("/ikkalySocket/**").permitAll();
                     auth.requestMatchers("/user/*").permitAll();
                     auth.anyRequest().authenticated();
                 })
